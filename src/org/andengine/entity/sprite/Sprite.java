@@ -103,13 +103,20 @@ public class Sprite extends RectangularShape {
 	}
 
 	public Sprite(final float pX, final float pY, final float pWidth, final float pHeight, final ITextureRegion pTextureRegion, final ISpriteVertexBufferObject pSpriteVertexBufferObject, final ShaderProgram pShaderProgram) {
-		super(pX, pY, pWidth, pHeight, pShaderProgram);
+		this(new SpriteBuilder<Sprite>(pX, pY, pTextureRegion, pSpriteVertexBufferObject)
+				.width(pWidth)
+				.height(pHeight)
+				.shaderProgram(pShaderProgram));
+	}
+	
+	public Sprite(SpriteBuilder<?> builder){
+		super(builder.x, builder.y, builder.width, builder.height, builder.shaderProgram);
 		
-		this.mTextureRegion = pTextureRegion;
-		this.mSpriteVertexBufferObject = pSpriteVertexBufferObject;
+		this.mTextureRegion = builder.textureRegion;
+		this.mSpriteVertexBufferObject = builder.spriteVertexBufferObject;
 
 		this.setBlendingEnabled(true);
-		this.initBlendFunction(pTextureRegion);
+		this.initBlendFunction(builder.textureRegion);
 		
 		this.onUpdateVertices();
 		this.onUpdateColor();
@@ -215,4 +222,47 @@ public class Sprite extends RectangularShape {
 	// ===========================================================
 	// Inner and Anonymous Classes
 	// ===========================================================
+	static public class SpriteBuilder<T extends Sprite> {
+		public final float x;
+		public final float y;
+		public final ITextureRegion textureRegion;
+		public final ISpriteVertexBufferObject spriteVertexBufferObject;
+		
+		float height;
+		float width;
+		ShaderProgram shaderProgram;
+		
+		public SpriteBuilder(float pX, float pY, ITextureRegion pTextureRegion, VertexBufferObjectManager pVertexBufferObjectManager) {
+			this(pX, pY, pTextureRegion, new HighPerformanceSpriteVertexBufferObject(pVertexBufferObjectManager, Sprite.SPRITE_SIZE, DrawType.STATIC, true, Sprite.VERTEXBUFFEROBJECTATTRIBUTES_DEFAULT));
+		}
+		
+		public SpriteBuilder(float pX, float pY, ITextureRegion pTextureRegion, ISpriteVertexBufferObject pSpriteVertexBufferObject) {
+			x = pX;
+			y = pY;
+			textureRegion = pTextureRegion;
+			spriteVertexBufferObject = pSpriteVertexBufferObject;
+			
+			height = textureRegion.getHeight();
+			width = textureRegion.getWidth();
+		
+			shaderProgram =  PositionColorTextureCoordinatesShaderProgram.getInstance();
+		}
+		
+		
+
+		public SpriteBuilder<T> height(float pHeight){
+			height = pHeight;
+			return this;
+		}
+		
+		public SpriteBuilder<T> width(float pWidth){
+			width = pWidth;
+			return this;
+		}
+		
+		public SpriteBuilder<T> shaderProgram(ShaderProgram pShaderProgram){
+			shaderProgram = pShaderProgram;
+			return this;
+		}
+	}
 }
