@@ -460,6 +460,11 @@ public abstract class BaseMenuItemDecorator implements IMenuItem {
 	}
 
 	@Override
+	public boolean isEntityModifierRegistered(final IEntityModifier pEntityModifier) {
+		return this.mMenuItem.isEntityModifierRegistered(pEntityModifier);
+	}
+
+	@Override
 	public int getEntityModifierCount() {
 		return this.mMenuItem.getEntityModifierCount();
 	}

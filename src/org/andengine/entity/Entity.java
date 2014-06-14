@@ -1059,6 +1059,14 @@ public class Entity implements IEntity {
 		}
 		return this.mEntityModifiers.removeAll(pEntityModifierMatcher);
 	}
+	
+	@Override
+	public boolean isEntityModifierRegistered(final IEntityModifier pEntityModifier) {
+		if (this.mEntityModifiers == null) {
+			return false;
+		}
+		return this.mEntityModifiers.contains(pEntityModifier);
+	}
 
 	@Override
 	public int getEntityModifierCount() {

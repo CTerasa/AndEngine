@@ -403,6 +403,7 @@ public interface IEntity extends IDrawHandler, IUpdateHandler, IDisposable, ITou
 	public void registerEntityModifier(final IEntityModifier pEntityModifier);
 	public boolean unregisterEntityModifier(final IEntityModifier pEntityModifier);
 	public boolean unregisterEntityModifiers(final IEntityModifierMatcher pEntityModifierMatcher);
+	public boolean isEntityModifierRegistered(final IEntityModifier pEntityModifier);
 	public int getEntityModifierCount();
 	public void resetEntityModifiers();
 	public void clearEntityModifiers();
