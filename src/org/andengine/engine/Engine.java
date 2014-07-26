@@ -808,7 +808,7 @@ public class Engine implements SensorEventListener, OnTouchListener, ITouchEvent
 		if (this.mDefaultDisplay == null) {
 			throw new IllegalStateException();
 		} else {
-			return this.mDefaultDisplay.getOrientation();
+			return this.mDefaultDisplay.getRotation();
 		}
 	}
 
