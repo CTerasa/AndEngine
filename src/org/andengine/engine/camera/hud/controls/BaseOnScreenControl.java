@@ -6,6 +6,7 @@ import org.andengine.engine.handler.timer.ITimerCallback;
 import org.andengine.engine.handler.timer.TimerHandler;
 import org.andengine.entity.scene.IOnSceneTouchListener;
 import org.andengine.entity.scene.Scene;
+import org.andengine.entity.sprite.ISprite;
 import org.andengine.entity.sprite.Sprite;
 import org.andengine.input.touch.TouchEvent;
 import org.andengine.opengl.texture.region.ITextureRegion;
@@ -82,11 +83,11 @@ public abstract class BaseOnScreenControl extends HUD implements IOnSceneTouchLi
 	// Getter & Setter
 	// ===========================================================
 
-	public Sprite getControlBase() {
+	public ISprite getControlBase() {
 		return this.mControlBase;
 	}
 
-	public Sprite getControlKnob() {
+	public ISprite getControlKnob() {
 		return this.mControlKnob;
 	}
 

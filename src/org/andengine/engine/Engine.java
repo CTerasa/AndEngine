@@ -9,7 +9,6 @@ import org.andengine.audio.music.MusicFactory;
 import org.andengine.audio.music.MusicManager;
 import org.andengine.audio.sound.SoundFactory;
 import org.andengine.audio.sound.SoundManager;
-import org.andengine.audio.sound.exception.SoundException;
 import org.andengine.engine.camera.Camera;
 import org.andengine.engine.handler.DrawHandlerList;
 import org.andengine.engine.handler.IDrawHandler;

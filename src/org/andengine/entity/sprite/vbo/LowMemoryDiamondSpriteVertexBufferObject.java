@@ -2,6 +2,7 @@ package org.andengine.entity.sprite.vbo;
 
 import java.nio.FloatBuffer;
 
+import org.andengine.entity.sprite.ISprite;
 import org.andengine.entity.sprite.Sprite;
 import org.andengine.opengl.texture.region.ITextureRegion;
 import org.andengine.opengl.vbo.DrawType;
@@ -65,7 +66,7 @@ public class LowMemoryDiamondSpriteVertexBufferObject extends LowMemorySpriteVer
 	}
 
 	@Override
-	public void onUpdateTextureCoordinates(final Sprite pSprite) {
+	public void onUpdateTextureCoordinates(final ISprite pSprite) {
 		final FloatBuffer bufferData = this.mFloatBuffer;
 
 		final ITextureRegion textureRegion = pSprite.getTextureRegion();

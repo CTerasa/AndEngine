@@ -1,5 +1,6 @@
 package org.andengine.entity.sprite.vbo;
 
+import org.andengine.entity.sprite.ISprite;
 import org.andengine.entity.sprite.Sprite;
 import org.andengine.entity.sprite.UniformColorSprite;
 import org.andengine.opengl.texture.region.ITextureRegion;
@@ -67,7 +68,7 @@ public class HighPerformanceUniformColorSpriteVertexBufferObject extends HighPer
 	}
 
 	@Override
-	public void onUpdateTextureCoordinates(final Sprite pSprite) {
+	public void onUpdateTextureCoordinates(final ISprite pSprite) {
 		final float[] bufferData = this.mBufferData;
 
 		final ITextureRegion textureRegion = pSprite.getTextureRegion(); // TODO Optimize with field access?

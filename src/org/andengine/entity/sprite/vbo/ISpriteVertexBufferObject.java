@@ -1,5 +1,6 @@
 package org.andengine.entity.sprite.vbo;
 
+import org.andengine.entity.sprite.ISprite;
 import org.andengine.entity.sprite.Sprite;
 import org.andengine.opengl.vbo.IVertexBufferObject;
 
@@ -20,5 +21,5 @@ public interface ISpriteVertexBufferObject extends IVertexBufferObject {
 
 	public void onUpdateColor(final Sprite pSprite);
 	public void onUpdateVertices(final Sprite pSprite);
-	public void onUpdateTextureCoordinates(final Sprite pSprite);
+	public void onUpdateTextureCoordinates(final ISprite pSprite);
 }

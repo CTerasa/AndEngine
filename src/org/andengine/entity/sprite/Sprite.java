@@ -23,7 +23,7 @@ import android.opengl.GLES20;
  * @author Nicolas Gramlich
  * @since 19:22:38 - 09.03.2010
  */
-public class Sprite extends Shape {
+public class Sprite extends Shape implements ISprite {
 	// ===========================================================
 	// Constants
 	// ===========================================================
@@ -126,14 +126,23 @@ public class Sprite extends Shape {
 	// Getter & Setter
 	// ===========================================================
 
+	/* (non-Javadoc)
+	 * @see org.andengine.entity.sprite.ISprite#getTextureRegion()
+	 */
 	public ITextureRegion getTextureRegion() {
 		return this.mTextureRegion;
 	}
 
+	/* (non-Javadoc)
+	 * @see org.andengine.entity.sprite.ISprite#isFlippedHorizontal()
+	 */
 	public boolean isFlippedHorizontal() {
 		return this.mFlippedHorizontal;
 	}
 
+	/* (non-Javadoc)
+	 * @see org.andengine.entity.sprite.ISprite#setFlippedHorizontal(boolean)
+	 */
 	public void setFlippedHorizontal(final boolean pFlippedHorizontal) {
 		if (this.mFlippedHorizontal != pFlippedHorizontal) {
 			this.mFlippedHorizontal = pFlippedHorizontal;
@@ -142,10 +151,16 @@ public class Sprite extends Shape {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see org.andengine.entity.sprite.ISprite#isFlippedVertical()
+	 */
 	public boolean isFlippedVertical() {
 		return this.mFlippedVertical;
 	}
 
+	/* (non-Javadoc)
+	 * @see org.andengine.entity.sprite.ISprite#setFlippedVertical(boolean)
+	 */
 	public void setFlippedVertical(final boolean pFlippedVertical) {
 		if (this.mFlippedVertical != pFlippedVertical) {
 			this.mFlippedVertical = pFlippedVertical;
@@ -154,6 +169,9 @@ public class Sprite extends Shape {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see org.andengine.entity.sprite.ISprite#setFlipped(boolean, boolean)
+	 */
 	public void setFlipped(final boolean pFlippedHorizontal, final boolean pFlippedVertical) {
 		if ((this.mFlippedHorizontal != pFlippedHorizontal) || (this.mFlippedVertical != pFlippedVertical)) {
 			this.mFlippedHorizontal = pFlippedHorizontal;

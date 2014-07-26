@@ -12,8 +12,8 @@ import org.andengine.opengl.texture.Texture;
 import org.andengine.opengl.texture.TextureManager;
 import org.andengine.opengl.texture.TextureOptions;
 import org.andengine.opengl.util.GLState;
-import org.andengine.util.debug.Debug;
 import org.andengine.util.StreamUtils;
+import org.andengine.util.debug.Debug;
 import org.andengine.util.math.MathUtils;
 
 import android.opengl.ETC1;

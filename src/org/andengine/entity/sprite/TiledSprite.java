@@ -20,7 +20,7 @@ import android.opengl.GLES20;
  * @author Nicolas Gramlich
  * @since 19:30:13 - 09.03.2010
  */
-public class TiledSprite extends Sprite {
+public class TiledSprite extends Sprite implements ITiledSprite {
 	// ===========================================================
 	// Constants
 	// ===========================================================
@@ -103,6 +103,9 @@ public class TiledSprite extends Sprite {
 		return this.getTiledTextureRegion().getTextureRegion(this.mCurrentTileIndex);
 	}
 
+	/* (non-Javadoc)
+	 * @see org.andengine.entity.sprite.ITiledSprite#getTiledTextureRegion()
+	 */
 	public ITiledTextureRegion getTiledTextureRegion() {
 		return (ITiledTextureRegion) this.mTextureRegion;
 	}
@@ -136,14 +139,23 @@ public class TiledSprite extends Sprite {
 	// Methods
 	// ===========================================================
 
+	/* (non-Javadoc)
+	 * @see org.andengine.entity.sprite.ITiledSprite#getCurrentTileIndex()
+	 */
 	public int getCurrentTileIndex() {
 		return this.mCurrentTileIndex;
 	}
 
+	/* (non-Javadoc)
+	 * @see org.andengine.entity.sprite.ITiledSprite#setCurrentTileIndex(int)
+	 */
 	public void setCurrentTileIndex(final int pCurrentTileIndex) {
 		this.mCurrentTileIndex = pCurrentTileIndex;
 	}
 
+	/* (non-Javadoc)
+	 * @see org.andengine.entity.sprite.ITiledSprite#getTileCount()
+	 */
 	public int getTileCount() {
 		return this.getTiledTextureRegion().getTileCount();
 	}

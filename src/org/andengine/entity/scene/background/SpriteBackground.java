@@ -1,5 +1,6 @@
 package org.andengine.entity.scene.background;
 
+import org.andengine.entity.sprite.ISprite;
 import org.andengine.entity.sprite.Sprite;
 
 /**
@@ -34,8 +35,8 @@ public class SpriteBackground extends EntityBackground {
 	// Getter & Setter
 	// ===========================================================
 
-	public Sprite getSprite() {
-		return (Sprite) this.mEntity;
+	public ISprite getSprite() {
+		return (ISprite) this.mEntity;
 	}
 
 	// ===========================================================

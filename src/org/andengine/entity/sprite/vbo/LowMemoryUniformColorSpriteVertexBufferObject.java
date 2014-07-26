@@ -2,6 +2,7 @@ package org.andengine.entity.sprite.vbo;
 
 import java.nio.FloatBuffer;
 
+import org.andengine.entity.sprite.ISprite;
 import org.andengine.entity.sprite.Sprite;
 import org.andengine.entity.sprite.UniformColorSprite;
 import org.andengine.opengl.texture.region.ITextureRegion;
@@ -69,7 +70,7 @@ public class LowMemoryUniformColorSpriteVertexBufferObject extends LowMemoryVert
 	}
 
 	@Override
-	public void onUpdateTextureCoordinates(final Sprite pSprite) {
+	public void onUpdateTextureCoordinates(final ISprite pSprite) {
 		final FloatBuffer bufferData = this.mFloatBuffer;
 
 		final ITextureRegion textureRegion = pSprite.getTextureRegion(); // TODO Optimize with field access?
