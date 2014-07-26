@@ -784,12 +784,12 @@ public class Engine implements SensorEventListener, OnTouchListener, ITouchEvent
 	}
 
 	private void registerSelfAsSensorListener(final SensorManager pSensorManager, final int pType, final SensorDelay pSensorDelay) {
-		final Sensor sensor = pSensorManager.getSensorList(pType).get(0);
+		final Sensor sensor = pSensorManager.getDefaultSensor(pType);
 		pSensorManager.registerListener(this, sensor, pSensorDelay.getDelay());
 	}
 
 	private void unregisterSelfAsSensorListener(final SensorManager pSensorManager, final int pType) {
-		final Sensor sensor = pSensorManager.getSensorList(pType).get(0);
+		final Sensor sensor = pSensorManager.getDefaultSensor(pType);
 		pSensorManager.unregisterListener(this, sensor);
 	}
 

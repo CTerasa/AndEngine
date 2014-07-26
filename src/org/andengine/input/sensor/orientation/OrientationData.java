@@ -42,14 +42,17 @@ public class OrientationData extends BaseSensorData {
 	// Getter & Setter
 	// ===========================================================
 
+	@SuppressWarnings("deprecation")
 	public float getRoll() {
 		return super.mValues[SensorManager.DATA_Z];
 	}
 
+	@SuppressWarnings("deprecation")
 	public float getPitch() {
 		return super.mValues[SensorManager.DATA_Y];
 	}
 
+	@SuppressWarnings("deprecation")
 	public float getYaw() {
 		return super.mValues[SensorManager.DATA_X];
 	}
